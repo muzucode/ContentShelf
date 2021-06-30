@@ -4,8 +4,7 @@
 
     <!-- Add book module -->
     <div class="container w-50 p-4 bg-dark rounded">
-      <h3 class=" text-warning"><strong>Module</strong>: Add book to DB</h3>
-      <!-- Add book form -->
+      <h3 class="text-warning my-3"><strong>Module</strong>: Add book to DB</h3>
       <form class="text-white">
 
         <div class="form-group">
@@ -33,9 +32,18 @@
           <input  class="form-control" id="imglinkInput" placeholder="Image Link" v-model="book.imglink">
         </div>
 
-        <button @click="addBookToDb()" type="button" class="btn btn-secondary w-100">Submit</button>
+        <button @click="addBookToDb()" type="button" class="btn btn-info w-100">Submit</button>
       </form>
-      <h3 class=" text-warning mt-4"><strong>Module</strong>: Books list</h3>
+    <hr class="bg-white my-5"/>
+    <!-- Book list module -->
+      <h3 class=" text-warning my-3"><strong>Module</strong>: Books list</h3>
+      <div class="container">
+        <div class="row text-white rounded" >
+          <div class="col col-lg bg-secondary rounded-left p-2">Book name</div>
+          <div class="col- p-2 bg-warning">Edit</div>
+          <div class="col- p-2 rounded-right bg-danger">Delete</div>
+        </div>
+      </div>
     </div>
 
   </div>

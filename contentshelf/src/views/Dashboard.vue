@@ -16,7 +16,7 @@
 			<div v-for="item in items" :key="item" class="col-2 pl-3 pr-3 text-wrap" id="itemHolder">
 				<img class="img-fluid rounded shadow-lg" :src="item.imglink"/>
 				<h6 class="mt-2 pt-0 mb-0 pb-0" id="item-title">{{item.title}}</h6>
-				<h7 class="mt-0 pt-0">{{item.author}}</h7>
+				<h6 class="mt-1 pt-0 text-muted" id="item-subtitle" >{{item.author}}</h6>
 			</div>
 	</div>
 
@@ -73,7 +73,8 @@ export default {
 	font-weight: bold;
 }
 #item-subtitle{
-	
+	font-size:13px;
+	font-style: italic;
 }
 
 #itemHolder {
