@@ -1,12 +1,28 @@
 <template>
-<div>
-  <div id="nav" class="pt-3">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-auto p-0">
+      <sidebar></sidebar>
+    </div>
+    <div class="col">
+      <div id="nav" class="pt-3">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link> |
+        <router-link to="/dashboard">Shelves</router-link> |
+        <router-link to="/dev-tools">Dev Tools</router-link>
+      </div>
+      <router-view />
+    </div>
+  </div>
+
+  <!-- <div id="nav" class="pt-3">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/dashboard">Shelves</router-link> |
     <router-link to="/dev-tools">Dev Tools</router-link>
   </div>
-  <router-view />
+  
+  <router-view /> -->
 </div>
 </template>
 
@@ -29,3 +45,12 @@
   color: #42b983;
 }
 </style>
+
+<script>
+import Sidebar from './views-dev/Components/Sidebar.vue'
+export default {
+  components: {
+    Sidebar
+  }
+}
+</script>

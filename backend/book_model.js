@@ -11,8 +11,6 @@ const bookSchema = new mongoose.Schema({
   hidden: { type: Boolean, default: false },
 });
 
-
-
 // Create model out of the book schema
 const Book = mongoose.model('Book', bookSchema);
 

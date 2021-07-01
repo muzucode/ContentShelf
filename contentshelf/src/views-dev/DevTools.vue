@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <h1 class="p-5 display-3">Dev Tools Dashboard</h1>
+    <h1 class="p-4 display-3">Dev Tools</h1>
+    <hr class="mb-5"/>
 
     <!-- Modules container -->
     <div class="container d-flex" id="modules-container">
@@ -40,11 +41,8 @@
         </form>
       </div>
 
-      <!-- HORIZONTAL RULE -->
-      <!-- <hr class="bg-white my-5"/> -->
-
       <!-- Book list module -->
-        <book-list class="w-25 shadow-lg"></book-list>
+      <book-list class="w-25 shadow-lg"></book-list>
 
     </div>
   </div>
@@ -113,7 +111,7 @@ export default {
 		}
   },
   components: {
-    BookList
+    BookList,
   },
 }
 

@@ -21,7 +21,7 @@
           </div>
 
           <div class="col- text-white">
-            <button class="btn w-100 h-100 bg-danger font-italic text-white border border-dark">
+            <button class="btn w-100 h-100 bg-danger font-italic text-white border border-dark"  @click="removeBook(item._id)">
               <img src="../../../assets/open-iconic-master/svg/trash.svg" width="20" height="20"/>
             </button>
           </div>
@@ -49,8 +49,14 @@ export default {
                 console.log(res);
                 this.bookList = res;
                 });
+        },
+        removeBook: function(id){
+          // Remove book with Id given
+          console.log('Sending request to remove book with the following ID:');
+          console.log(id);
         }
     },
+
       // Lifecycle Hook
     created: function() {
         this.bookList = this.getAllBooks();
