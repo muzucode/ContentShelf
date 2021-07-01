@@ -13,7 +13,7 @@
 	<h1 class="mb-5 display-3">My {{category}} shelf</h1>
 
 	<div class="row p-4 justify-content-center" id="itemTable"  v-if="items">
-			<div v-for="item in items" :key="item" class="col-2 pl-3 pr-3 text-wrap" id="itemHolder">
+			<div v-for="item in items" :key="item" class="col-2 pl-3 pr-3 text-wrap mb-4" id="itemHolder">
 				<img class="img-fluid rounded shadow-lg" :src="item.imglink"/>
 				<h6 class="mt-2 pt-0 mb-0 pb-0" id="item-title">{{item.title}}</h6>
 				<h6 class="mt-1 pt-0 text-muted" id="item-subtitle" >{{item.author}}</h6>
