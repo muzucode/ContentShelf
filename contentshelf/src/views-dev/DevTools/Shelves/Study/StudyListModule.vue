@@ -2,14 +2,14 @@
     <div class="container w-50 rounded p-4">
       
         <!-- Title -->
-        <h3><strong>Module</strong>: All books</h3>
+        <h3><strong>Module</strong>: All studies</h3>
         <hr/>
 
         <!-- Rows of books -->
-        <div id="book-row" v-for="item in bookList" :key="item" class="row text-black my-3" >
+        <div id="study-row" v-for="study in studyList" :key="study" class="row text-black my-3" >
           <div class="col-lg font-weight-bold">
-            <button class="btn w-100 h-100 font-italic bg-light border border-secondary" id="book-name">
-              {{item.title}}
+            <button class="btn w-100 h-100 font-italic bg-light border border-secondary" id="study-name">
+              {{study.title}}
             </button>
             
           </div>
@@ -30,38 +30,38 @@
 </template>
 
 <script>
-import BookDataService from '../../../../services/BookDataService';
+import StudyDataService from '../../../../services/StudyDataService';
 
 export default {
-    name: 'Book List Module',
+    name: 'Study List Module',
     data: () => {
         return {
             // Books in book list
-            bookList: []
+            studyList: []
         }
     },
     methods: {
-        getAllBooks: function(){
+        getAllStudies: function(){
         // Get all books from DB
-            const bookList = BookDataService.getAll()
+            const studyList = StudyDataService.getAll()
                 .then((res) => {
                 console.log('This is the gotten booklist');
                 console.log(res);
-                this.bookList = res;
+                this.studyList = res;
                 });
         },
-        deleteBook: function(bookId){
+        deleteBook: function(studyId){
           // Remove book with Id given
           console.log('Sending request to remove book with the following ID:');
-          console.log(bookId);
+          console.log(studyId);
 
-          BookDataService.deleteOne(bookId);
+          StudyDataService.deleteOne(studyId);
         }
     },
 
       // Lifecycle Hook
     created: function() {
-        this.bookList = this.getAllBooks();
+        this.studyList = this.getAllStudies();
   }
 };
 
@@ -71,7 +71,7 @@ export default {
 
 <style>
 
-#book-row{
+#study-row{
   margin-left:0px;
   margin-right:0px;
   border: 0px solid #ffc118;

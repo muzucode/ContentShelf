@@ -26,7 +26,7 @@
 
 			<div class="form-group my-3 font-italic">
 				<label for="reslinkInput">Study Resource Link</label>
-				<input  class="form-control" id="reslinkInput" placeholder="Study Resource Link" v-model="study.imglink">
+				<input  class="form-control" id="reslinkInput" placeholder="Study Resource Link" v-model="study.hyperlink">
 			</div>
 
 			<div class="form-group my-3 font-italic">
@@ -90,7 +90,7 @@ export default {
           description: '',
           imglink: 'https://images-na.ssl-images-amazon.com/images/I/81b6e-dc41L.jpg',
           hyperlink: '',
-					date: Date.now,
+		  date: Date.now,
           hidden: false,
       };
 		}

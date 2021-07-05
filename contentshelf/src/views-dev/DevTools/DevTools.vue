@@ -16,6 +16,7 @@
         <book-list-module class="w-25 shadow-lg"></book-list-module>
       </div>
 
+      <!-- Modules - Study -->
       <div v-if="$route.params.shelf=='study'" class="container d-flex" id="modules-study">
         <!-- Add study module -->
         <add-study-module></add-study-module>
@@ -33,7 +34,7 @@
 import BookListModule from './Shelves/Books/BookList.vue';
 import AddBookModule from './Shelves/Books/AddBookModule.vue';
 import AddStudyModule from './Shelves/Study/AddStudyModule.vue';
-import StudyList from './Shelves/Study/StudyListModule.vue';
+import StudyListModule from './Shelves/Study/StudyListModule.vue';
 
 
 export default {
@@ -51,7 +52,7 @@ export default {
     BookListModule,
     AddBookModule,
     AddStudyModule,
-    StudyList
+    StudyListModule
   }
 }
 
