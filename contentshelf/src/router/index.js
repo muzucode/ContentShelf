@@ -17,16 +17,40 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },  
   {
-    path: "/dashboard",
-    name: "Dashboard",
+    path: "/shelves",
+    name: "Shelves",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Dashboard.vue"),
+      import(/* webpackChunkName: "about" */ "../views/Shelves/Shelves.vue"),
   },  
   {
     path: "/dev-tools",
     name: "Dev Tools",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views-dev/DevTools.vue"),
+      import(/* webpackChunkName: "about" */ "../views-dev/DevTools/DevTools.vue"),
+  },
+  {
+    path: "/dev-tools/:shelf",
+    name: "Dev Tools - :shelf",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views-dev/DevTools/DevTools.vue"),
+  },
+  {
+    path: "/book/:id",
+    name: "Book Item View",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Items/BookItemView.vue"),
+  },
+  {
+    path: "/shelves/books",
+    name: "Book Shelf",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Shelves/BookShelfView.vue"),
+  },
+  {
+    path: "/shelves/study",
+    name: "Study Shelf",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Shelves/StudyShelfView.vue"),
   },
 ];
 

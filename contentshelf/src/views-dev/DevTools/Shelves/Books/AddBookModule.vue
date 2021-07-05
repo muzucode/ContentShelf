@@ -1,14 +1,6 @@
 <template>
-  <div class="container">
-    <h1 class="p-4 display-3">Dev Tools</h1>
-    <hr class="mb-5"/>
-
-    <!-- Modules container -->
-    <div class="container d-flex" id="modules-container">
-      <!-- Add book module -->
-      <div class="container w-25 p-4 bg-teal rounded shadow-lg ">
-
-        <h3><strong>Module</strong>: Add book to DB</h3>
+        <div class="container w-25 p-4 bg-teal rounded shadow-lg ">
+        <h3><strong>Module</strong>: Add book</h3>
         <hr/>
         <form>
 
@@ -33,37 +25,22 @@
           </div>
 
           <div class="form-group my-3 font-italic">
-            <label for="descriptionInput">Image Link</label>
+            <label for="imglinkInput">Image Link</label>
             <input  class="form-control" id="imglinkInput" placeholder="Image Link" v-model="book.imglink">
           </div>
 
           <button @click="addBookToDb()" type="button" class="btn btn-info w-100 mt-3">Submit</button>
         </form>
       </div>
-
-      <!-- Book list module -->
-      <book-list class="w-25 shadow-lg"></book-list>
-
-    </div>
-  </div>
 </template>
 
-
-
-
-<style>
-.form-group{
-  margin:0px;
-}
-
-</style>
-
 <script>
-import BookDataService from "../services/BookDataService";
-import BookList from './Modules/Books/BookList.vue';
+import BookDataService from "../../../../services/BookDataService";
+
+
 
 export default {
-  name: "Dev Tools",
+  name: "Add Book Module",
   data: () => {
     return {
       // Book to be added
@@ -83,11 +60,11 @@ export default {
     addBookToDb: function(){
 			// Book is modeled through inputs and 'book' data object
 			const book = {
-				title:  this.book.title,
+				title: this.book.title,
 				author: this.book.author,
 				genre: this.book.genre,
-				description:   this.book.description,
-        imglink: this.book.imglink,
+				description: this.book.description,
+				imglink: this.book.imglink,
 				date: Date.now,
 				hidden: false,
 			};
@@ -107,22 +84,14 @@ export default {
           imglink: 'https://images-na.ssl-images-amazon.com/images/I/81b6e-dc41L.jpg',
           date: Date.now,
           hidden: false,
-      }
+      };
 		}
-  },
-  components: {
-    BookList,
-  },
+  }
 }
-
-
-
-// BEGIN HERE WITH FIGURING OUT HOW TO MODEL THE INPUT IN THE MODULE ACCORDING TO THE METHOD
-
-
-
-
-
-
-
 </script>
+
+<style>
+.form-group{
+  margin:0px;
+}
+</style>

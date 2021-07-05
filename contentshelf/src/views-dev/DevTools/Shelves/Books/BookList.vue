@@ -2,7 +2,7 @@
     <div class="container w-50 rounded p-4">
       
         <!-- Title -->
-        <h3><strong>Module</strong>: Books list</h3>
+        <h3><strong>Module</strong>: All books</h3>
         <hr/>
 
         <!-- Rows of books -->
@@ -16,13 +16,13 @@
 
           <div class="col- mr-2 text-white">
             <button class="btn w-100 h-100 bg-light border border-secondary font-italic text-white">
-              <img src="../../../assets/open-iconic-master/svg/pencil.svg" width="20" height="20"/>
+              <img src="../../../../assets/open-iconic-master/svg/pencil.svg" width="20" height="20"/>
             </button>
           </div>
 
           <div class="col- text-white">
-            <button class="btn w-100 h-100 bg-danger font-italic text-white border border-dark"  @click="removeBook(item._id)">
-              <img src="../../../assets/open-iconic-master/svg/trash.svg" width="20" height="20"/>
+            <button class="btn w-100 h-100 bg-danger font-italic text-white border border-dark"  @click="deleteBook(item._id)">
+              <img src="../../../../assets/open-iconic-master/svg/trash.svg" width="20" height="20"/>
             </button>
           </div>
         </div>
@@ -30,10 +30,10 @@
 </template>
 
 <script>
-import BookDataService from '../../../services/BookDataService.js';
+import BookDataService from '../../../../services/BookDataService';
 
 export default {
-    name: 'Book List',
+    name: 'Book List Module',
     data: () => {
         return {
             // Books in book list
@@ -50,10 +50,12 @@ export default {
                 this.bookList = res;
                 });
         },
-        removeBook: function(id){
+        deleteBook: function(bookId){
           // Remove book with Id given
           console.log('Sending request to remove book with the following ID:');
-          console.log(id);
+          console.log(bookId);
+
+          BookDataService.deleteOne(bookId);
         }
     },
 

@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import BookController from './book_controller.js';
+import StudyController from './study_controller.js';
 import mongoose from 'mongoose';
 
 // Express configuration
@@ -31,7 +32,7 @@ mongoose.connect('mongodb://localhost:27017/ContentShelf', {useNewUrlParser: tru
 
 
 
-// ROUTES (FOR NOW)
+// ROUTES (BOOK)
 // POST - Add book
 app.post('/book/add', function (req, res) {
     const input = req.body;
@@ -47,4 +48,38 @@ app.get('/book/getAll', async function (req, res) {
     await console.log(books);
     // Send the books as the response
     await res.send(books);
+});
+
+// DELETE - Delete one book
+app.delete('/book/deleteOne', function (req, res) {
+    const bookId = req.body.id;
+    console.log('Server.js: bookId received is:');
+    console.log(bookId);
+    BookController.deleteOne(bookId);
+});
+
+// ROUTES (STUDY)
+// POST - Add study
+app.post('/study/add', function (req, res) {
+    const input = req.body;
+    console.log(input);
+    StudyController.addOne(input);
+});
+
+// GET - All studies
+app.get('/study/getAll', async function (req, res) {
+    // Set studies equal to the return of the gotten studies
+    const studies = await StudyController.getAll();
+    await console.log('(Express server.js) Studies gotten are:');
+    await console.log(studies);
+    // Send the studies as the response
+    await res.send(studies);
+});
+
+// DELETE - Delete one study
+app.delete('/study/deleteOne', function (req, res) {
+    const studyId = req.body.id;
+    console.log('Server.js: studyId received is:');
+    console.log(studyId);
+    BookController.deleteOne(studyId);
 });

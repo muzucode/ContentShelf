@@ -1,14 +1,14 @@
 import axios from 'axios'
 
-const uri = 'http://localhost:8090/book'
+const uri = 'http://localhost:8090/study'
 
-export default class BookDataService {
+export default class StudyDataService {
 
     // Add book to the database
-    static addBook(book){
-        axios.post(`${uri}/add`, book);
+    static addOne(item){
+        axios.post(`${uri}/add`, item);
         console.log("Frontend BookDataService Message: The following book has been posted to the server:");
-        console.log(book);
+        console.log(item);
     };
 
         // Get books from the database

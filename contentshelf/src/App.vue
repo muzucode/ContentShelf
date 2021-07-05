@@ -8,7 +8,7 @@
       <div id="nav" class="pt-3">
         <router-link to="/">Home</router-link> |
         <router-link to="/about">About</router-link> |
-        <router-link to="/dashboard">Shelves</router-link> |
+        <router-link to="/shelves">Shelves</router-link> |
         <router-link to="/dev-tools">Dev Tools</router-link>
       </div>
       <router-view />

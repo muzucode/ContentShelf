@@ -22,14 +22,17 @@ export default class BookController {
         return query;
     }
 
-}
+    // Delete one book by ID
+    static deleteOne(bookId){
+        Book.deleteOne({_id: bookId})
+            .then(res => {
+                console.log(`Book with following ID is deleted`)
+                console.log(bookId)
+                console.log(res);
+            })
+            .catch(err =>{
+                console.error(err)
+            })
+    }
 
-// static async getAll(){
-//     const query = await Book.find(function (err, books) {
-//         if (err) return console.error(err);
-//         console.log("Backend message: Books found:")
-//         console.log(books);
-//         // Return all the found books
-//         return books;
-//     });
-// }
+}
