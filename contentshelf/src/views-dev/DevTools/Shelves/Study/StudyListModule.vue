@@ -21,7 +21,7 @@
           </div>
 
           <div class="col- text-white">
-            <button class="btn w-100 h-100 bg-danger font-italic text-white border border-dark"  @click="deleteBook(item._id)">
+            <button class="btn w-100 h-100 bg-danger font-italic text-white border border-dark"  @click="deleteStudy(study._id)">
               <img src="../../../../assets/open-iconic-master/svg/trash.svg" width="20" height="20"/>
             </button>
           </div>
@@ -50,7 +50,7 @@ export default {
                 this.studyList = res;
                 });
         },
-        deleteBook: function(studyId){
+        deleteStudy: function(studyId){
           // Remove book with Id given
           console.log('Sending request to remove book with the following ID:');
           console.log(studyId);

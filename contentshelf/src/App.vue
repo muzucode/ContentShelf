@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-auto p-0">
-      <sidebar></sidebar>
+      <sidebar v-if="isDevTools"></sidebar>
     </div>
     <div class="col">
       <div id="nav" class="pt-3">
@@ -49,8 +49,20 @@
 <script>
 import Sidebar from './views-dev/Components/Sidebar.vue'
 export default {
+  data: function(){
+    return {
+
+    }
+  },
   components: {
     Sidebar
+  },
+  computed: {
+    // Checks if the page is a devTools page
+    // Loads sidebar if a devtools page
+    isDevTools: function(){
+      return this.$route.name === 'Dev Tools - :shelf' || this.$route.name === 'Dev Tools'
+    }
   }
 }
 </script>

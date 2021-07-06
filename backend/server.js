@@ -81,5 +81,5 @@ app.delete('/study/deleteOne', function (req, res) {
     const studyId = req.body.id;
     console.log('Server.js: studyId received is:');
     console.log(studyId);
-    BookController.deleteOne(studyId);
+    StudyController.deleteOne(studyId);
 });

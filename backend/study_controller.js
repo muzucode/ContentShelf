@@ -36,13 +36,3 @@ export default class StudyController {
     }
 
 }
-
-// static async getAll(){
-//     const query = await Book.find(function (err, books) {
-//         if (err) return console.error(err);
-//         console.log("Backend message: Books found:")
-//         console.log(books);
-//         // Return all the found books
-//         return books;
-//     });
-// }
