@@ -5,12 +5,15 @@
       <sidebar v-if="isDevTools"></sidebar>
     </div>
     <div class="col">
-      <div id="nav" class="pt-3">
-        <router-link to="/">Home</router-link> |
-        <!-- <router-link to="/about">About</router-link> | -->
-        <router-link to="/shelves">Shelves</router-link> |
-        <router-link to="/dev-tools">Dev Tools</router-link>
+      <div class="container w-100" id="top-nav">
+        <div id="nav" class="pt-3">
+          <router-link to="/">Home</router-link> |
+          <!-- <router-link to="/about">About</router-link> | -->
+          <router-link to="/shelves">Shelves</router-link> |
+          <router-link to="/dev-tools">Dev Tools</router-link>
+        </div>
       </div>
+
       <router-view />
     </div>
   </div>

@@ -3,6 +3,10 @@ import cors from 'cors';
 import BookController from './book_controller.js';
 import StudyController from './study_controller.js';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+// Set config for dotenv
+dotenv.config();
 
 // Express configuration
 var app = express();
@@ -20,9 +24,11 @@ app.listen(port, () => {
     console.log(`Listening at http://localhost:${port}`)
 });
 
+// Get mongoURI from .env file
+const uri = process.env.mongoURI;
 
 // Mongoose connection
-mongoose.connect('mongodb://localhost:27017/ContentShelf', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
 
 
 

@@ -15,7 +15,7 @@
                     <router-link to="/dev-tools/study"><button type="button" class="btn btn-secondary w-100">Study</button></router-link>
                 </div>
             </div>
-            <div class="row mb-3">
+            <!-- <div class="row mb-3">
                 <div class="col">
                     <router-link to="/dev-tools/development"><button type="button" class="btn btn-secondary w-100">Development</button></router-link>
                 </div>
@@ -29,7 +29,7 @@
                 <div class="col">
                     <router-link to="/dev-tools/misc."><button type="button" class="btn btn-secondary w-100">Misc.</button></router-link>
                 </div>
-            </div>
+            </div> -->
         </div>
 
 

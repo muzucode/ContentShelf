@@ -3,8 +3,7 @@
 		<router-link to="/shelves/books">Books</router-link> | 
 		<router-link to="/shelves/study">Study</router-link> | 
 		<router-link to="/shelves/development">Development</router-link> | 
-		<router-link to="/shelves/music">Music</router-link> | 
-		<router-link to="/shelves/miscellaneous">Misc.</router-link> 
+		<router-link to="/shelves/music">Music</router-link>
 	</div>
 </template>
 

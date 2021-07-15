@@ -63,6 +63,12 @@ const routes = [
     name: "Development Shelf",
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Shelves/DevelopmentShelfView.vue"),
+  },  
+  {
+    path: "/shelves/music",
+    name: "Music Shelf",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Shelves/MusicShelfView.vue"),
   },
 ];
 

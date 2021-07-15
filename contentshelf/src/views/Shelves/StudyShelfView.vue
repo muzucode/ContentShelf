@@ -6,14 +6,14 @@
 		<!-- Shelf heading -->
     <ShelfHeading>
       <template v-slot:title>Study Shelf</template>
-      <template v-slot:subtitle>My favorite <strong>study resources</strong> as well as any <strong>news articles</strong> that I've come across over time</template>
+      <template v-slot:subtitle><strong>Resources</strong> I find useful as well as <strong>news articles</strong> that I find interesting</template>
     </ShelfHeading>
 
 		<!-- Studies -->
-		<div class="row p-4 d-flex justify-content-between" id="itemTable"  v-if="studies">
-			<a :href="study.hyperlink" v-for="study in studies" :key="study" class="col-4 p-3 text-wrap mb-4 shadow-lg rounded border border-secondary" id="itemHolder">
+		<div class="row p-4 d-flex" id="itemTable"  v-if="studies">
+			<a :href="study.hyperlink" v-for="study in studies" :key="study" class="col p-3 text-wrap mr-4 mb-4 shadow-lg rounded" id="itemHolderStudy">
 				<h6 class="" id="item-title">{{study.title}}</h6>
-				<h6 class="mt-2 pt-0 text-muted" id="item-subtitle" >{{study.author}}</h6>
+				<h6 class="mt-2 pt-0" id="item-subtitle" >{{study.author}}</h6>
 			</a>
 		</div>
 	</div>
@@ -56,7 +56,19 @@ export default {
 </script>
 
 <style>
-#itemHolder {
-
+#itemHolderStudy {
+  background-color:rgb(108, 125, 170);
+  color:white;
+  font-style: bold;
+}
+#itemHolderStudy:hover {
+  background-color:rgb(84, 102, 151);
+}
+#item-title{
+	font-weight: bold;
+}
+#item-subtitle{
+	font-size:13px;
+	font-style: italic;
 }
 </style>
