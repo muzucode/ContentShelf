@@ -1,21 +1,17 @@
 <template>
-<div class="container" id="dashboard-container">
+	<div class="container" id="dashboard-container">
 
+		<shelves-nav></shelves-nav>
+			<CenterMessage>
+				<template v-slot:title>
+					<h1 class="display-4 text-secondary ml-auto mr-auto">Check out the shelves!</h1>
+				</template>
 
-<shelves-nav></shelves-nav>
+				<template v-slot:subtitle>
+					<h6 class="text-secondary ml-auto mr-auto font-italic">Select a shelf above to see some of my favorite things!</h6>
+				</template>
+			</CenterMessage>
 
-
-	<h1 class="mb-5 display-3">My {{category}} shelf</h1>
-
-	<div class="row p-4 justify-content-center" id="itemTable"  v-if="items">
-			<div v-for="item in items" :key="item" class="col-2 pl-3 pr-3 text-wrap mb-4" id="itemHolder">
-				<router-link :to="'/book/'+ item._id">
-					<img class="img-fluid rounded shadow" style="height: 200px" :src="item.imglink"/>
-				</router-link>
-				<h6 class="mt-2 pt-0 mb-0 pb-0" id="item-title">{{item.title}}</h6>
-				<h6 class="mt-1 pt-0 text-muted" id="item-subtitle" >{{item.author}}</h6>
-			</div>
-	</div>
 
 	</div>
 </template>
@@ -23,13 +19,15 @@
 
 <script>
 
-import BookDataService from "../../services/BookDataService.js"
-import ShelvesNav from '../Shelves/ShelvesNavView.vue'
+import BookDataService from "../../services/BookDataService.js";
+import ShelvesNav from '../Shelves/ShelvesNavView.vue';
+import CenterMessage from '@/components/CenterMessage.vue';
 
 export default {
   name: "Dashboard",
   components: {
-	ShelvesNav
+	ShelvesNav,
+	CenterMessage
   },
   data: () => {
 		return{

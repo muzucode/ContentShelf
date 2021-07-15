@@ -52,6 +52,18 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Shelves/StudyShelfView.vue"),
   },
+  {
+    path: "/shelves/study/:id",
+    name: "Study Item View",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Items/StudyItemView.vue"),
+  },
+  {
+    path: "/shelves/development",
+    name: "Development Shelf",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Shelves/DevelopmentShelfView.vue"),
+  },
 ];
 
 const router = createRouter({

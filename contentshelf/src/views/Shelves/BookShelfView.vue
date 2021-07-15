@@ -2,8 +2,12 @@
 	<div class="container">
 		<!-- Nav -->
 		<shelves-nav></shelves-nav>
-		<!-- Title -->
-		<h1 class="my-5 display-3">My book shelf</h1>
+		<!-- Shelf heading -->
+    <ShelfHeading>
+      <template v-slot:title>Book Shelf</template>
+      <template v-slot:subtitle>My favorite books that I have read or am currently reading</template>
+    </ShelfHeading>
+
 		<!-- Books -->
 		<div class="row p-4 d-flex justify-content-between" id="itemTable"  v-if="books">
 			<div v-for="book in books" :key="book" class="col-2 pl-3 pr-3 text-wrap mb-4" id="itemHolder">
@@ -20,6 +24,7 @@
 <script>
 import BookDataService from '../../services/BookDataService';
 import ShelvesNav from '../../views/Shelves/ShelvesNavView.vue';
+import ShelfHeading from '@/components/ShelfHeading';
 
 
 export default {
@@ -30,7 +35,8 @@ export default {
 		}
   },
 	components: {
-		ShelvesNav
+		ShelvesNav,
+    ShelfHeading
 	},
 	methods: {
 		getBooksFromDb: function(){

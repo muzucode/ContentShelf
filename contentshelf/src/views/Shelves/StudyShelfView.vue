@@ -1,18 +1,20 @@
 <template>
-  	<div class="container">
+  <div class="container">
 		<!-- Nav -->
 		<shelves-nav></shelves-nav>
-		<!-- Title -->
-		<h1 class="my-5 display-3">My study shelf</h1>
+
+		<!-- Shelf heading -->
+    <ShelfHeading>
+      <template v-slot:title>Study Shelf</template>
+      <template v-slot:subtitle>My favorite <strong>study resources</strong> as well as any <strong>news articles</strong> that I've come across over time</template>
+    </ShelfHeading>
+
 		<!-- Studies -->
 		<div class="row p-4 d-flex justify-content-between" id="itemTable"  v-if="studies">
-			<div v-for="study in studies" :key="study" class="col-4 pl-3 pr-3 text-wrap mb-4 border border-danger" id="itemHolder">
-				<router-link :to="'/study/'+ study._id">
-					Hello
-				</router-link>
-				<h6 class="mt-2 pt-0 mb-0 pb-0" id="item-title">{{study.title}}</h6>
-				<h6 class="mt-1 pt-0 text-muted" id="item-subtitle" >{{study.author}}</h6>
-			</div>
+			<a :href="study.hyperlink" v-for="study in studies" :key="study" class="col-4 p-3 text-wrap mb-4 shadow-lg rounded border border-secondary" id="itemHolder">
+				<h6 class="" id="item-title">{{study.title}}</h6>
+				<h6 class="mt-2 pt-0 text-muted" id="item-subtitle" >{{study.author}}</h6>
+			</a>
 		</div>
 	</div>
 </template>
@@ -20,6 +22,7 @@
 <script>
 import ShelvesNav from '../../views/Shelves/ShelvesNavView.vue';
 import StudyDataService from '../../services/StudyDataService';
+import ShelfHeading from '@/components/ShelfHeading';
 
 export default {
 	
@@ -30,7 +33,8 @@ export default {
 		}
   },
 	components: {
-		ShelvesNav
+		ShelvesNav,
+    ShelfHeading
 	},
 	methods: {
 		getStudiesFromDb: function(){
@@ -52,5 +56,7 @@ export default {
 </script>
 
 <style>
+#itemHolder {
 
+}
 </style>

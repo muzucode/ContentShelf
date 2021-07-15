@@ -8,10 +8,11 @@
         <!-- Rows of books -->
         <div id="study-row" v-for="study in studyList" :key="study" class="row text-black my-3" >
           <div class="col-lg font-weight-bold">
-            <button class="btn w-100 h-100 font-italic bg-light border border-secondary" id="study-name">
-              {{study.title}}
-            </button>
-            
+            <router-link :to="'/shelves/study/'+ study._id">
+                <button class="btn w-100 h-100 font-italic bg-light border border-secondary" id="study-name">
+                {{study.title}}
+                </button>
+            </router-link>
           </div>
 
           <div class="col- mr-2 text-white">
