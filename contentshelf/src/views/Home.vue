@@ -28,7 +28,7 @@
         <div class="col p-0">
           <h6 id="heading-name">Technologies:</h6>
           <ul>
-            <li>Web (Vue/Express/MongoDB)</li>
+            <li>Web (Vue, Express, Mongo, AWS)</li>
             <li>Mobile (Kotlin, Android SDK)</li>
             <li>Scripting (JavaScript, Python)</li>
             <li>Design (Adobe Suite)</li>
@@ -48,8 +48,8 @@
             <li>ContentShelf</li>
             <li>MorningStar API Addon</li>
             <li>MLB Boxscore Webscraper</li>
-            <li>Immersify</li>
             <li>NBA Odds Sentiment-Analyzer</li>
+            <li>Immersify Language Learning App</li>
           </ul>
         </div>
 
