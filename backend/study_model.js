@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-// Define the book schema
+// Define the study schema
 const studySchema = new mongoose.Schema({
   title:  String, // String is shorthand for {type: String}
   author: String,
@@ -12,8 +12,8 @@ const studySchema = new mongoose.Schema({
   hidden: { type: Boolean, default: false },
 });
 
-// Create model out of the book schema
+// Create model out of the study schema
 const Study = mongoose.model('Study', studySchema);
 
-// Exports the book model
+// Exports the study model
 export default Study

@@ -1,14 +1,16 @@
 <template>
-<div>
+<div class="">
 		<!-- Shelf heading -->
     <ShelfHeading>
       <template v-slot:title>Welcome!</template>
+      <template v-slot:subtitle>ContentShelf is brought to you by:</template>
     </ShelfHeading>
 
-  <div class="container w-50 mt-5 p-4 shadow-lg rounded" id="card-container">
+<!-- Profile card -->
+  <div class="container w-50 mt-3 p-4 shadow-lg rounded" id="card-container">
     <div class="d-flex flex-row">
-        <img src="https://i.pinimg.com/originals/39/26/db/3926db089d7af5fa91711db1dbb82b7c.jpg" class="w-25 mr-5 rounded"/>
-
+        <img src="https://i.imgur.com/gwmPxgs.png" class="mr-3 rounded img-fluid" id="portrait-img"/>
+<!-- https://i.pinimg.com/originals/39/26/db/3926db089d7af5fa91711db1dbb82b7c.jpg -->
       <div id="info-section" class="text-left w-100">
 
         <div>
@@ -40,16 +42,15 @@
 
         <div class="h-100"></div>
 
-
         <!-- Right side -->
         <div class="col">
           <h6 id="heading-name">Projects:</h6>
           <ul>
-            <li>ContentShelf</li>
-            <li>MorningStar API Addon</li>
-            <li>MLB Boxscore Webscraper</li>
-            <li>NBA Odds Sentiment-Analyzer</li>
-            <li>Immersify Language Learning App</li>
+            <li><a target="_blank" href="https://github.com/muzucode/ContentShelf">ContentShelf</a></li>
+            <li><a target="_blank" href="https://github.com/muzucode/Morningstar-API-Addon">MorningStar API Addon</a></li>
+            <li><a target="_blank" href="https://github.com/muzucode/MLB-BoxScore-Scraper">MLB Boxscore Webscraper</a></li>
+            <li><a target="_blank" href="https://github.com/muzucode/NBA-RapidAPI-Pandas">NBA Odds Sentiment-Analyzer</a></li>
+            <li><a target="_blank" href="https://github.com/muzucode/Immersify">Immersify Language Learning App</a></li>
           </ul>
         </div>
 
@@ -61,9 +62,9 @@
         
 
       </div>
-
     </div>
   </div>
+
 </div>
 </template>
 
@@ -81,6 +82,9 @@ export default {
 </script>
 
 <style>
+#img-tech{
+  width: 100px;
+}
 #main-wrapper{
     height:80vh
 }
@@ -91,5 +95,9 @@ export default {
 }
 #heading-subtitle{
   color:#C65549;
+}
+#portrait-img{
+  object-fit: cover;
+  width:25%;
 }
 </style>

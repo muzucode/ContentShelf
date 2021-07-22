@@ -10,8 +10,8 @@
     </ShelfHeading>
 
 		<!-- Studies -->
-		<div class="row p-4 d-flex" id="itemTable"  v-if="studies">
-			<a :href="study.hyperlink" v-for="study in studies" :key="study" class="col p-3 text-wrap mr-4 mb-4 shadow-lg rounded" id="itemHolderStudy">
+		<div class="row p-4 d-flex justify-content-center" id="itemTable"  v-if="studies">
+			<a :href="study.hyperlink" v-for="study in studies" :key="study" class="col-3 p-3 text-wrap mr-4 mb-4 shadow-lg rounded text-left" id="itemHolderStudy">
 				<h6 class="" id="item-title">{{study.title}}</h6>
 				<h6 class="mt-2 pt-0" id="item-subtitle" >{{study.author}}</h6>
 			</a>
@@ -57,12 +57,12 @@ export default {
 
 <style>
 #itemHolderStudy {
-  background-color:rgb(108, 125, 170);
+  background-color:rgb(132, 147, 189);
   color:white;
   font-style: bold;
 }
 #itemHolderStudy:hover {
-  background-color:rgb(84, 102, 151);
+  background-color:rgb(96, 114, 163);
 }
 #item-title{
 	font-weight: bold;

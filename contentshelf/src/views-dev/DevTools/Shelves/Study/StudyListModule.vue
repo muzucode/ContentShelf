@@ -46,14 +46,14 @@ export default {
         // Get all books from DB
             const studyList = StudyDataService.getAll()
                 .then((res) => {
-                console.log('This is the gotten booklist');
+                console.log('This is the gotten studylist');
                 console.log(res);
                 this.studyList = res;
                 });
         },
         deleteStudy: function(studyId){
           // Remove book with Id given
-          console.log('Sending request to remove book with the following ID:');
+          console.log('Sending request to remove study with the following ID:');
           console.log(studyId);
 
           StudyDataService.deleteOne(studyId);

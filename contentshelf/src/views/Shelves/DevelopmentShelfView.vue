@@ -9,7 +9,7 @@
     </ShelfHeading>
 
     <a target="_blank" href="https://github.com/muzucode"><img class="img-fluid w-50 mt-5" src="https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png"/></a>
-    <h6 class="mt-3 text-secondary">(Click me!)</h6>
+    <h6 class="mt-4 text-secondary">(Click me!)</h6>
 	</div>
 </template>
 
