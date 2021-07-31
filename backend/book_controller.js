@@ -15,9 +15,9 @@ export default class BookController {
 
   static async getAll(){
       const query = await Book.find({});
-      console.log('Query: getAll')
-      console.log('Query Results:')
-      console.log(query)
+      // console.log('Query: getAll')
+      // console.log('Query Results:')
+      // console.log(query)
       return query;
   };
 
